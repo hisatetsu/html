@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import url("normalize.css");
+
+html *,
+::before,
+::after {
+box-sizing: border-box;
+}
+
+
+.header {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width:100vw;
+	position: fixed;
+	background-color: #FFF;
+}
+
+.logo{
+	width:20vw;
+}
+
+.flex-menu {
+	display: -webkit-inline-flex;
+	display: inline-flex;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	width:auto;
+	list-style: none;
+	width:80vw;
+}
+
+.flex-menu li {
+  text-align: center;
+  background-color: #333;
+  line-height: 30px;
+  margin-right: 2px;
+  width: calc(100vw/5);
+}
+
+.flex-menu li a{
+	display: block;
+	color:#fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.heroimg{
+	padding-top:50px;
+	width:100vw;
+ 	aspect-ratio:16/4;
+}
+
+.flex-container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content:center;
+	width:100vw;
+
+}
+
+
+
+.left {
+	-webkit-flex: 0 1 30vw;
+	-ms-flex: 0 1 30vw;
+	flex: 0 1 30vw;
+	background-color: blue;
+	height:120vh;
+	margin: 2px;
+}
+.center {
+	-webkit-flex: 0 1 40vw;
+	-ms-flex: 0 1 40vw;
+	flex: 0 1 40vw;
+	background-color: yellow;
+	height:120vh;
+	margin: 2px;
+}
+.right {
+	-webkit-flex: 0 1 20vw;
+	-ms-flex: 0 1 29vw;
+	flex: 0 1 29vw;
+	background-color: red;
+	height:120vh;
+	margin: 2px;
+}

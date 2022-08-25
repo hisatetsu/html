@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import url("normalize.css");
+
+html *,
+::before,
+::after {
+box-sizing: border-box;
+}
+
+.page{
+  min-height: 100vh;
+  min-width:  100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+}
+
+.header .logo {
+  font-size: 24px;
+}
+
+.drawer-hidden {
+  display: none;
+}
+
+.drawer-open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;/* 重なり順を一番上に */
+  cursor: pointer;
+}
+
+
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.drawer-open span:before {
+  bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+  top: 8px;
+}
+
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked ~ .drawer-open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked ~ .drawer-open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer-check:checked ~ .drawer-open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+#drawer-check:checked  ~ .back {
+    position: absolute;
+    left:0px;
+    top:0px;
+    left:-200px;
+	width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+
+.drawer-content {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -255px;/* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: #eee;
+  transition: .1s;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.8);
+}
+
+
+#drawer-check:checked ~ .drawer-content {
+  right: 0px;/* メニューを画面に入れる */
+}
+
+
+.grid{
+	display: flex;
+	flex-direction:row;
+}
+
+.column01{
+	width:50%;
+	background-color: red;
+	min-height:calc(100vh/2);
+	width:100%;
+}
+
+.column02{
+	width:50%;
+	background-color: blue;
+	min-height:calc(100vh/3);
+	width:100%;
+}
+
+
